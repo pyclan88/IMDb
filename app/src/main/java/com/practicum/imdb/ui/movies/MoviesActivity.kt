@@ -1,4 +1,4 @@
-package com.practicum.imdb
+package com.practicum.imdb.ui.movies
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +14,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.practicum.imdb.ui.poster.PosterActivity
+import com.practicum.imdb.R
+import com.practicum.imdb.data.dto.MoviesSearchResponse
+import com.practicum.imdb.data.network.IMDbApiService
+import com.practicum.imdb.domain.models.Movie
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,19 +27,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MoviesActivity : AppCompatActivity() {
 
-    private val imdbBaseUrl = "https://imdb-api.com"
+//    private val imdbBaseUrl = "https://tv-api.com"
 
     companion object {
         private const val CLICK_DEBOUNCE_DELAY = 1000L
         private const val SEARCH_DEBOUNCE_DELAY = 2000L
     }
 
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(imdbBaseUrl)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-
-    private val imdbService = retrofit.create(IMDbApiService::class.java)
+//    private val retrofit = Retrofit.Builder()
+//        .baseUrl(imdbBaseUrl)
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//
+//    private val imdbService = retrofit.create(IMDbApiService::class.java)
 
     private lateinit var queryInput: EditText
     private lateinit var placeholderMessage: TextView

@@ -1,5 +1,6 @@
-package com.practicum.imdb
+package com.practicum.imdb.data.dto
+
 
 data class MoviesSearchResponse(val searchType: String,
                                 val expression: String,
-                                val results: List<Movie>)
+                                val results: List<MovieDto>) : Response()
